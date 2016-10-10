@@ -5,6 +5,8 @@ import VueRouter from 'vue-router';
 import App from '../js/App.vue';
 import { configRouter } from '../js/routers/route.config.js';
 import VueTouch from 'vue-touch';
+
+Vue.config.debug = true;//开启错误提示
 Vue.use(VueTouch)
 //安装使用vue-router插件
 Vue.use(VueRouter);

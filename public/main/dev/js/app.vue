@@ -1,7 +1,8 @@
 <script type="text/javascript">
     import 'common.scss';
+    import store from './store';
     export default {
-        
+        store
     }
 </script>
 <template>
