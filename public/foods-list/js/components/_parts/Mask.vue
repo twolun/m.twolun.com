@@ -11,6 +11,9 @@
 		        default:false
 		    }
 		},
+		ready: function(){
+			document.querySelector('.page').style.overflowY = "hidden";
+		},
 		methods:{
 		    close(){
 		      //TODO 广播
@@ -18,7 +21,7 @@
 		      //触发绑定的父组件中的自定义事件
 		      this.$dispatch('close-callback');
 		    }
-		  }
+		}
 	}
 </script>
 <template>

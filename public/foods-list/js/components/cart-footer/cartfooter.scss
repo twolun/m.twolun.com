@@ -2,22 +2,14 @@
 
 .cartfooter {
     position: fixed;
-    right: 0;
     bottom: 0;
     left: 0;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
     padding-left: 8.5rem;
     background-color: #3d3d3f;
     height: 5rem;
-    opacity: .95;
+    // opacity: .95;
     z-index: 99;
+    width: 100%;
 }
 .carticon {
     position: absolute;
@@ -38,8 +30,8 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: url('') center no-repeat;
-    background-size: 1.753425rem;
+    background: url('../../../img/cart.png') center no-repeat;
+    background-size: 4.753425rem;
     content: "";
 }
 .carticon:after {
@@ -79,6 +71,9 @@
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 5rem;
+}
+.cartprice{
+    padding-top: .6rem;
 }
 .shake{
     -webkit-animation: shaking .5s ease-out;

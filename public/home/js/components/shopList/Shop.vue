@@ -4,7 +4,8 @@
 	}
 </script>
 <template>
-	<section class="item" v-link="{path: `/shop/${shop.shopId}`}">
+		<a href="#" v-link="{path:`/shop/${shop.shopId}`}">
+	<section class="item">
 		<div class="left-wrap">
 			<img class="logo" :src="shop.shopLogo">
 		</div>
@@ -14,4 +15,5 @@
 			</section> 
 		</div>
 	</section>
+		</a>
 </template>

@@ -5,7 +5,7 @@
 		props: ['opacity', 'li-opacity', 'shopheaderH'],
 		data: function(){
 			return {
-				shoplogo: metadata.host + shoplogo
+				shoplogo: shoplogo
 			}
 		},
 		computed: {
@@ -20,6 +20,11 @@
 						transition: 'height .2s ease-in'
 					}
 				}
+			}
+		},
+		methods: {
+			handleOpenShopActivity: function(){
+				this.$dispatch('open-shop-activity');
 			}
 		}
 	}
@@ -53,11 +58,15 @@
 								<span class="activity-description"> (不与其他活动同享)新用户下单立减12.0元 </span> 
 							</div> 
 						</li> 
-					</ul> 
+					</ul>
+					<div class="shopheader-activity-count" v-touch:tap="handleOpenShopActivity"> 
+						2个活动 <span class="weui_cell_ft"></span>						
+					</div> 
 				</div>
 			</div>
 		</div>
-		<div class="shopheader-notice"> 
-			<span>本店菜品味美价廉，欢迎亲们光临本店，谢谢。本店另加了骨汤麻辣烫点餐时不点骨汤麻辣烫的就默认是香锅哦！</span> 
+		<div class="shopheader-notice" v-touch:tap="handleOpenShopActivity"> 
+			<span>本店菜品味美价廉，欢迎亲们光临本店，谢谢。本店另加了骨汤麻辣烫点餐时不点骨汤麻辣烫的就默认是香锅哦！</span>
+			<span class="weui_cell_ft"></span> 
 	    </div>
 </template>

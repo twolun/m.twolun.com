@@ -6,14 +6,14 @@
 		data: function(){
 			return {
 				shopList: [
-					{shopId: 1111111, shopName: '汉堡王（兆丰店）', shopLogo: metadata.host + logo1}, 
-					{shopId: 2222222, shopName: '汉堡王（安亭店）', shopLogo: metadata.host + logo1}, 
-					{shopId: 3333333, shopName: '汉堡王（花桥店）', shopLogo: metadata.host + logo1}, 
-					{shopId: 5555555, shopName: '汉堡王（园大店）', shopLogo: metadata.host + logo1}, 
-					{shopId: 6666666, shopName: '汉堡王（兆丰店）', shopLogo: metadata.host + logo1}, 
-					{shopId: 7777777, shopName: '汉堡王（安亭店）', shopLogo: metadata.host + logo1}, 
-					{shopId: 8888888, shopName: '汉堡王（花桥店）', shopLogo: metadata.host + logo1}, 
-					{shopId: 9999999, shopName: '汉堡王（园大店）', shopLogo: metadata.host + logo1}
+					{shopId: 1111111, shopName: '汉堡王（兆丰店）', shopLogo: logo1}, 
+					{shopId: 2222222, shopName: '汉堡王（安亭店）', shopLogo: logo1}, 
+					{shopId: 3333333, shopName: '汉堡王（花桥店）', shopLogo: logo1}, 
+					{shopId: 5555555, shopName: '汉堡王（园大店）', shopLogo: logo1}, 
+					{shopId: 6666666, shopName: '汉堡王（兆丰店）', shopLogo: logo1}, 
+					{shopId: 7777777, shopName: '汉堡王（安亭店）', shopLogo: logo1}, 
+					{shopId: 8888888, shopName: '汉堡王（花桥店）', shopLogo: logo1}, 
+					{shopId: 9999999, shopName: '汉堡王（园大店）', shopLogo: logo1}
 				]
 			}
 		},

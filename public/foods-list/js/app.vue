@@ -1,6 +1,5 @@
 <script type="text/javascript">
   import './components/shopbody/shopbody.scss';
-  import ShopTip from './components/shoptip';
   import MenuNav from './components/menu-nav';
   import MenuList from './components/menu-list';
   import CartFooter from './components/cart-footer';
@@ -8,7 +7,6 @@
   // import store from './store';
   import { pageInit } from './store/actions';
 
-  import { Throttle } from './utils/util.js';
 
   export default {
     data(){
@@ -19,7 +17,6 @@
       }
     },
     components: {
-      ShopTip,
       MenuNav,
       MenuList,
       CartFooter,
@@ -54,7 +51,6 @@
 </script>
 <template>
   <div class="shopbody">
-    <shop-tip ></shop-tip>
     <div class="menuview">
       <div class="menuview-main">
         <div class="main-content">

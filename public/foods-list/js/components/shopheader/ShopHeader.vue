@@ -5,7 +5,7 @@
 		props: ['opacity', 'li-opacity', 'shopheaderH'],
 		data: function(){
 			return {
-				shoplogo: metadata.host + shoplogo
+				shoplogo: shoplogo
 			}
 		},
 		computed: {

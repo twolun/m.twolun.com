@@ -5,6 +5,29 @@
     color: #fff;
     font-size: .293333rem;
     // transition: height .2s ease-in;
+    .activity-icon {
+        margin-right: .1rem;
+        font-size: 1.1rem;
+        font-style: normal;
+        line-height: 1rem;
+        height: 1.3rem;
+        padding: 0.1rem 0rem;
+        display: inline-block;
+        box-sizing: border-box;
+        text-align: center;
+        border: 1px solid;
+        border-radius: 0.18rem;
+    }
+    .activity-wrap {
+        line-height: 1.426667rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        font-size: 1.1rem;
+    }
+    .activity-wrap.wrap .activity-icon {
+        margin-top: .04rem;
+    }
 }
 .shopheader-background {
     position: fixed;
@@ -82,50 +105,21 @@
     -webkit-transition: opacity .2s;
     transition: opacity .2s;
 }
-.activity-wrap {
-    line-height: 1.426667rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    font-size: 1.2rem;
-}
-.activity-icon {
-    margin-right: .133333rem;
-    font-size: 1.2rem;
-    font-style: normal;
-    line-height: 1rem;
-    height: 1.4rem;
-    padding: .18rem .08rem;
-    display: inline-block;
-    box-sizing: border-box;
-    text-align: center;
-    border: 1px solid;
-    border-radius: .08rem;
-}
-.activity-wrap.wrap .activity-icon {
-    margin-top: .04rem;
-}
-.activity-description {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    display: block;
-    width: 0;
-}
 .shopheader-notice {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 0 .533333rem 0 .266667rem;
-    height: 1.733333rem;
-    line-height: 1.733333rem;
+    height: 2rem;
+    line-height: 2rem;
     background-color: rgba(0,0,0,.15);
     color: hsla(0,0%,100%,.8);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 1.2rem;
+    padding-right: 2rem;
 }
 .shopheader-notice:before {
     content: '\516C\544A';
@@ -138,7 +132,34 @@
     border-radius: .053333rem;
     margin-right: 1.133333rem;
 }
-
+.shopheader-activity-count {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    padding: 0 .333333rem 0 .5rem;
+    background-color: rgba(0,0,0,.15);
+    border-radius: .5rem;
+    font-size: 1rem;
+    .weui_cell_ft:after{
+        width: 5px;
+        height: 5px;
+    }
+    
+}
+.shopheader-notice{
+    .weui_cell_ft{
+        position: absolute;
+        top: 0;
+        right: 5px;
+    }
+    .weui_cell_ft:after{
+        width: 5px;
+        height: 5px;
+        
+    }
+}
 
 
 

@@ -40,9 +40,6 @@ function getHtmlPlugin(type) {
 }
 
 
-console.log(getHtmlPlugin());
-
-
 
 var metadata = {
   host: "http://localhost:8080"
@@ -120,7 +117,8 @@ module.exports = {
         'art-template': path.join(process.cwd(), '..','common/plugins/art-template.js'),
         'common.scss': path.join(process.cwd(), '..','common/scss/common.scss'),
         'app.scss': path.join(process.cwd(), '..','common/scss/app.scss'),
-        'Vcontent': path.join(process.cwd(), '..', 'common/components/vcontent')
+        'Vcontent': path.join(process.cwd(), '..', 'common/components/vcontent'),
+        'Mask': path.join(process.cwd(), '..', 'common/components/Mask.vue')
 
       }
   },

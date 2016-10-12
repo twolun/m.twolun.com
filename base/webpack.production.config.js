@@ -103,6 +103,8 @@ module.exports = {
         'imgLazyLoad': path.join(process.cwd(), '..','common/plugins/imglazyload.js'),
         'art-template': path.join(process.cwd(), '..','common/plugins/art-template.js'),
         'common.scss': path.join(process.cwd(), '..','common/scss/common.scss'),
+        'app.scss': path.join(process.cwd(), '..','common/scss/app.scss'),
+        'Mask': path.join(process.cwd(), '..', 'common/components/Mask.vue')
       }
   },
 

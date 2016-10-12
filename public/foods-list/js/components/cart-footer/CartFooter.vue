@@ -1,7 +1,7 @@
 <script type="text/javascript">
 	import './cartfooter.scss';  
 	//需要一个蒙板组件
-  	import Mask from '../_parts/Mask.vue';
+  	import Mask from 'Mask';
   	import CartBody from '../cart-body';
 	import { getTotalData } from '../../store/getters';
 
@@ -9,15 +9,17 @@
 		props: ['cartShaking'],
 		data: function(){
 			return {
-				isShow: false
+				maskShow: false
 			}
 		},
 		methods: {
 			handleCartShow: function(){
-				this.isShow = true;
+				this.maskShow = true;
+				document.querySelector('.page').style.overflowY = "hidden";
 			},
 			handleCloseCallback: function(){
-				this.isShow = false;
+				this.maskShow = false;
+				document.querySelector('.page').style.overflowY = "auto";
 			}
 		},
 		components: {
@@ -36,14 +38,14 @@
 </script>
 <template>
 	<footer>
-		<mask :is-show="isShow" @close-callback="handleCloseCallback"></mask>
+		<mask :mask-show="maskShow" @close-callback="handleCloseCallback"></mask>
 		<cart-body
-			v-show="isShow"
+			v-show="maskShow"
 			transition="cartbodyts"
 		>
 			
 		</cart-body>
-		<div class="cartfooter" style="z-index: 11;">
+		<div class="cartfooter">
 			<span class="carticon"
 				v-bind:class="{'shake': cartShaking}"
 				attr-quantity="{{totalData.cartNums}}"

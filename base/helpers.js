@@ -59,7 +59,7 @@ function getCopyPlugin(){
     });
     return plugins
 }
-console.log(getCopyPlugin());
+
 exports.getProjectName = getProjectName;
 exports.getCopyPlugin = getCopyPlugin;
 // exports.getHtmlPlugin = getHtmlPlugin;

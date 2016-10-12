@@ -1,7 +1,11 @@
 <script type="text/javascript">
   import ShopHeader from './components/shopheader';
-  import FoodsList from '../../foods-list/js/app.vue';
+  import ShopTip from './components/shoptip';
   import { Throttle } from './utils/util.js';
+
+  import FoodsList from '../../foods-list/js/app.vue';
+  import ShopInfo from '../../shop-info/js/app.vue';
+  import NoFood from '../../shop-nofood/js/app.vue';
 
   export default {
     data(){
@@ -9,12 +13,19 @@
         opacity: 1,                   //.page向上滚动时，.shopheader的透明效果
         liOpacity: 0,                 //.page向下pan时，隐藏的li元素的透明渐变效果
         shopheaderH: 110,             //.shopheader默认高度
+        showShopActivity: false,
         currentView: 'FoodsList'
       }
     },
     components: {
       ShopHeader,
-      FoodsList
+      ShopTip,
+      FoodsList,
+      ShopInfo,
+      NoFood,
+      ShopActivity: function(resolve){
+        require(['../../shop-activity/js/app.vue'], resolve)
+      }
     },
     route: {
     },
@@ -43,6 +54,14 @@
       handlePagePanend: function(){
         this.shopheaderH = 110;
         this.liOpacity = 0;
+      },
+      //切换商品列表及商店信息
+      handleFoodsExInfo(type){
+        this.currentView = type === 'foods' ? 'FoodsList' : 'ShopInfo';
+      },
+      //查看商店活动
+      handlOpenShopActivity(close){
+        this.showShopActivity = close === 'close' ? false : true;
       }
     }
   }
@@ -57,14 +76,28 @@
       :opacity="opacity"
       :li-opacity="liOpacity"
       :shopheader-h="shopheaderH"
+      @open-shop-activity="handlOpenShopActivity"
     >
     </shop-header>
-    <component :is="currentView" keep-alive></component>    
+    <shop-tip @foods-ex-info="handleFoodsExInfo"></shop-tip>
+    <component 
+      :is="currentView" 
+      keep-alive
+    >
+      ></component>   
+      <shop-activity 
+        v-show="showShopActivity"
+        transition="fade"
+        @close-shop-activity="handlOpenShopActivity"
+      ></shop-activity> 
   </div>
 </template>
 <style lang="sass">
-::-webkit-scrollbar {
-    width: 0;
+.fade-transition {
+  transition: opacity .3s ease;
+}
+.fade-enter, .fade-leave {
+  opacity: 0;
 }
 
 </style>

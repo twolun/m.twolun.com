@@ -15,7 +15,7 @@ export default {
 }
 </script>
 <template>
-  <div class="page" transition="app">
+  <div>
     <nav-component></nav-component>
     <shop-list></shop-list>
   </div>

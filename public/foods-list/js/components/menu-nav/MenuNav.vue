@@ -6,7 +6,7 @@
 		data: function(){
 			return {
 				activeIndex: 0,
-				saleHot: metadata.host + saleHot,
+				saleHot: saleHot,
 				menuList: [
 					{title: '餐盒必点谢谢！'},
 					{title: '麻辣烫'},
