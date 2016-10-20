@@ -1,0 +1,43 @@
+@charset "UTF-8";
+.page-content{
+	background-color: #f4f4f4;
+}
+.markdown-content {
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 1.6rem;
+    color: #666;
+}
+.markdown-content h1, .markdown-content h2, .markdown-content h3, .markdown-content h4, .markdown-content h5, .markdown-content h6 {
+    color: #333;
+    line-height: 3rem;
+    margin: 1rem 0;
+    font-weight: bold;
+}
+.markdown-content h1 {
+    font-size: 1.8rem;
+}
+.markdown-content h2 {
+    font-size: 1.5rem;
+}
+.markdown-content h3 {
+    font-size: 1.4rem;
+}
+.markdown-content ol {
+    padding-left: 2rem;
+}
+.markdown-content ol {
+    list-style: decimal;
+}
+.markdown-content li, .markdown-content p, .markdown-content blockquote {
+    line-height: 1.8rem;
+}
+.markdown-content li {
+    margin: .5rem 0;
+}
+.markdown-content p {
+    margin: 1rem 0;
+}
+.markdown-content img {
+    max-width: 100%;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Vue-demo</title>
+    <!--忽略电话号码和email识别-->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <!--当网站添加到主屏幕快速启动方式，将网站添加到主屏幕快速启动方式-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!--隐藏ios上的浏览器地址栏-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- UC默认竖屏 ，UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 QQ强制全屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="x5-page-mode" content="app">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <style type="text/css">
+      .init-loading {
+        width: 100px;
+        height: 100px;
+        margin: 10rem auto;
+        animation: mint-spinner-rotate 1s infinite ease-out;
+        background: url('<%= metadata.host %>/images/loading1.png') center center no-repeat;
+        background-size: 100%;
+      }
+
+      @keyframes mint-spinner-rotate {
+        0% {
+          transform: translatey(0) scalex(1);
+        }        
+        
+        100% {
+          transform: translatey(-50px) scalex(.8);
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+  	<div id="app">
+     <div class="init-loading">
+       
+     </div> 
+    </div>
+
+  <script type="text/javascript" src="<%= metadata.host %>/build/vendor.js?v=<%= new Date().getTime()%>"></script>
+  <script type="text/javascript" src="<%= metadata.host %>/build/main.js?v=<%= new Date().getTime()%>"></script>
+ 
+  </body>
+</html>

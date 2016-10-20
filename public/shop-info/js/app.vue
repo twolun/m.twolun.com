@@ -27,7 +27,7 @@
     <div class="shop-info">
         <section class="shopinfo-rating">
             <header>  
-                <a href="#" v-link="{path:'/shoprated'}">
+                <a v-link="{path:'/shoprated'}">
                 <span class="overall">4.8分</span> 
                 <span class="compare">高于周边商家67.6%</span> 
                 <span class="rating-count weui_cell_ft"> 

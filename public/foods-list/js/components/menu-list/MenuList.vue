@@ -1,4 +1,5 @@
 <script type="text/javascript">
+	import IScroll from 'iscroll-lite';
 	import './menulist.scss';
 	import DtComponent from './_parts/DtComponent.vue';
 	import DdComponent from './_parts/DdComponent.vue';
@@ -9,6 +10,26 @@
 		components: {
 			DtComponent,
 			DdComponent
+		},
+		ready: function(){
+
+		},
+		directives: {
+			initscroll: {
+				bind: function(value){
+					console.log(value)
+				},
+				update: function(newVal, oldVal){
+					
+					if(oldVal){
+						let scrollWrapper = document.querySelector('#menu-list-wrapper');
+						if(scrollWrapper){
+							var myScroll = new IScroll(scrollWrapper);
+							
+						}
+					}
+				}
+			}
 		},
 		vuex: {
 			getters: {
@@ -21,8 +42,8 @@
 	}
 </script>
 <template>
-	<section class="menu-list">
-		<div class="scroller">
+	<section class="menu-list" id="menu-list-wrapper">
+		<div class="scroller" v-initscroll="foodsData">
 			<dl v-for="(key, value) in foodsData">
 				<dt-component
 					:food-menu="key"

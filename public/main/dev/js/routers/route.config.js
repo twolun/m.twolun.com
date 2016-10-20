@@ -14,6 +14,7 @@ export function configRouter(router){
 			}
 		},
 		'/shop/:shopId': {
+			name: 'shop',
 			component: function(resolve){
 				require(['../../../../shop/js/app.vue'], resolve)
 			},

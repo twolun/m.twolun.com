@@ -51,17 +51,11 @@
 </script>
 <template>
   <div class="shopbody">
-    <div class="menuview">
-      <div class="menuview-main">
-        <div class="main-content">
           <menu-nav ></menu-nav>
           <menu-list
             @change-cart="handleChangeCartNums"
           > </menu-list>      
-        </div>
-      </div>
-    </div>
-    <cart-footer
+        <cart-footer
       :cart-shaking="cartShaking"
       @change-cart="handleChangeCartNums"
     >

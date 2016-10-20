@@ -115,6 +115,7 @@ module.exports = {
         'swiper': path.join(process.cwd(), '..','common/plugins/swiper.min.js'),
         'imgLazyLoad': path.join(process.cwd(), '..','common/plugins/imglazyload.js'),
         'art-template': path.join(process.cwd(), '..','common/plugins/art-template.js'),
+        'iscroll-lite': path.join(process.cwd(), '../../', 'node_modules/iscroll/build/iscroll-lite.js'),
         'common.scss': path.join(process.cwd(), '..','common/scss/common.scss'),
         'app.scss': path.join(process.cwd(), '..','common/scss/app.scss'),
         'Vcontent': path.join(process.cwd(), '..', 'common/components/vcontent'),

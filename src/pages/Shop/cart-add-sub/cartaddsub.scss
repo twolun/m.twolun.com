@@ -1,0 +1,39 @@
+@charset "UTF-8";
+.cartbutton {
+    position: absolute;
+    right: 0px;
+    bottom: -.166667rem;
+    padding-right: 2px;
+    height: 23px;
+    overflow: hidden;
+}
+
+.entitybutton{
+	display: inline-block;
+	width: 21px;
+	height: 21px;
+	line-height: 19px;
+	text-align: center;
+	background-color: #3190e8;
+	color: #fff;
+	font-size: 2rem;
+	border-radius: 50%;
+}
+.entitybutton.sub{
+    border: 1px solid #3190e8;
+    background-color: #fff;
+    color: #3190e8;
+    font-size: 1.5rem;
+}
+.entityquantity {
+    display: inline-block;
+    text-align: center;
+    color: #666;
+    vertical-align: middle;
+    font-size: 1.4rem;
+    line-height: 19px;
+    width: 21px;
+    height: 21px;
+    position: relative;
+    top: -2px;
+}

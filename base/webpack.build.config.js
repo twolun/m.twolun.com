@@ -116,6 +116,7 @@ module.exports = {
         // 'swiper': path.join(process.cwd(), '..','common/plugins/swiper.min.js'),
         // 'imgLazyLoad': path.join(process.cwd(), '..','common/plugins/imglazyload.js'),
         // 'art-template': path.join(process.cwd(), '..','common/plugins/art-template.js'),
+        'iscroll-lite': path.join(process.cwd(), '../../', 'node_modules/iscroll/build/iscroll-lite.js'),
         'vue': path.join(process.cwd(), '../..', 'node_modules/vue/dist/vue.min.js'),
         'vuex': path.join(process.cwd(), '../..', 'node_modules/vuex/dist/vuex.min.js'),
         'vue-router': path.join(process.cwd(), '../..', 'node_modules/vue-router/dist/vue-router.min.js'),
