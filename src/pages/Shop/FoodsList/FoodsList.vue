@@ -4,16 +4,28 @@
 	import DtComponent from './_parts/DtComponent.vue';
 	import DdComponent from './_parts/DdComponent.vue';
 
+	import { mapGetters, mapActions } from 'vuex';
+
 	export default {
 		data: function(){
 			return {
 				foodsData: []
 			}
 		},
-		props: [],
 		components: {
 			DtComponent,
 			DdComponent
+		},
+		computed: {
+			...mapGetters({
+				foodslist: 'foodslist'
+			})
+		},
+		methods: {
+			...mapActions(['getFoodsList'])
+		},
+		created: function(){
+			this.$store.dispatch('getFoodsList');
 		},
 		mounted: function(){
 			this.foodsData = require('./data.js');

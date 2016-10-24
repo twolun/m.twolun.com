@@ -1,18 +1,39 @@
 <script type="text/javascript">
 	import FastClick from 'fastclick';
 	import './assets/images/using/loading1.png';	
+
 	export default {
 		data () {
 		    return {
-		      transitionName: 'slide-left'
+		      transitionName: 'slide-left',
 		    }
 		},
-		  // dynamically set transition based on route change
+		created: function(){
+			//页面刷新，则表明需要重新载入页面，清除保存的路由数据
+			window.onbeforeunload = function(){
+				window.sessionStorage && window.sessionStorage.clear();
+			}
+		},
 		watch: {
 		    '$route' (to, from) {
-		      	const toDepth = to.path.split('/').length
-		      	const fromDepth = from.path.split('/').length
-		      	this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+		      	// const toDepth = to.path.split('/').length
+		      	// const fromDepth = from.path.split('/').length
+		      	// this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+		      	/**
+		      	 * 判断路由是否已经渲染过，将to进行本地存储
+		      	 * 此处使用sessionStorage，用户关闭此次会话会清除本次存储的路由，
+		      	 * 再次重新进入应用时，所有路由要重新渲染，初始化
+		      	 */
+		      	let history = window.sessionStorage;
+		      	if(!history){
+		      		return false;
+		      	}
+		      	// history.clear();
+		      	if(!history.getItem(to.path)){
+		      		this.$store.dispatch('showGlobLoading');
+		      		history.setItem(to.path, to.path);
+		      	}
+		      	console.log(to.path)
 		    }
 		},
 
@@ -23,8 +44,11 @@
 </script>
 <template>
 	<div class="page">
+		
 		<transition name="router-fade" mode="out-in">
+			<keep-alive>
 			<router-view></router-view>	
+			</keep-alive>
 		</transition>
 	</div>
 </template>
@@ -37,6 +61,14 @@
 		max-width: 640px;
 		margin: 0 auto;
 		position: relative;
+		background-color: #f4f4f4;
+	}
+	.page-loading{
+		position: absolute;
+		top: 100px;
+		left: 50%;
+		margin-left: -30px;
+		z-index: 105;
 	}
 	.child-view {
 	  	position: absolute;

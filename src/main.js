@@ -6,27 +6,9 @@ import App from './app';
 // import 'mint-ui/lib/style.css';
 
 import { routes, scrollBehavior } from './routes/routes.config.js';
-import {
-    PageView,
-    Header,
-    Swipe,
-    SwipeItem,
-    Field, 
-    Button,
-    Switch,
-    Lazyload
-} from './mint-ui';
-
-// Vue.use(MintUI);
-
-Vue.component('page-view', PageView);
-Vue.component(Header.name, Header);
-Vue.component(Swipe.name, Swipe);
-Vue.component(SwipeItem.name, SwipeItem);
-Vue.component(Field.name, Field);
-Vue.component(Button.name, Button);
-Vue.component(Switch.name, Switch);
-Vue.component(Lazyload.name, Lazyload);
+import './mint-ui';
+import store from './store';
+import mixin from './mixin';
 
 Vue.config.debug = PRODUCTION;//开启错误提示
 Vue.use(VueRouter);
@@ -38,9 +20,10 @@ const router = new VueRouter({
 	routes
 })
 
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
+  // mixins: [mixin],
   router,
   render: h => h(App)
 })

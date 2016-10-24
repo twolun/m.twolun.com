@@ -4,14 +4,27 @@
 	import ShopList from './shopList';
 
 	export default {
+		data: function(){
+			return {
+				homeShowLoading: true
+			}
+		},
 		components: {
 			XNav,
 			ShopList
 		},
-		methods: {
-			handleClose(){
+		mounted: function(){
 
-			}
+		},
+		methods: {
+			handleHomeLoading(){
+				this.homeShowLoading = true;
+			},
+		},
+		beforeRouteEnter: function(to, from, next){
+			next(vm => {
+				vm.homeShowLoading = false;
+			});
 		}
 	}
 </script>
@@ -33,7 +46,8 @@
 		  	<x-nav></x-nav>
 		  </mt-swipe-item>
 		</mt-swipe>
-		<shop-list></shop-list>
+		<shop-list v-on:click.native="handleHomeLoading"></shop-list>
+		<mt-spinner v-if="homeShowLoading" :size="60" :type="3" color="#26a2ff" class="home-loading"></mt-spinner>
 	</div>
 </template>
 <style lang="sass">

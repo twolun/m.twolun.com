@@ -6,6 +6,7 @@
 	import FoodsList from './FoodsList';
 	import ShopInfo from './ShopInfo';
 	import CartFooter from './CartFooter';
+	import { mapGetters, mapActions } from 'vuex';
 
 	export default {
 		components: {
@@ -24,7 +25,23 @@
 	      		currentActivity: ''
 	        }
 	    },
+	    mounted: function(){
+	    	setTimeout(() => {
+
+	    	// this.$store.commit('HIDE_GLOB_LOADING');
+	    	}, 1000)
+	    },
+	    beforeRouteEnter: function(to, from, next){
+	    	// this.$store.commit('SHOW_GLOB_LOADING');
+	    		setTimeout(()=>{
+	    			next(vm => {
+	    		
+	    				// vm.$store.commit('HIDE_GLOB_LOADING');
+	    			});
+	    		}, 1000);
+	    },
 	    methods: {
+	    	...mapActions(['hideGlobLoading']),
 	    	handlOpenShopActivity(close){
 	        	this.showActivity = close === 'close' ? false : true;
 	        	this.currentActivity = close === 'close' ? '' : 'Activity';

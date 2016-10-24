@@ -1,3 +1,5 @@
+import Vue from 'vue';
+
 import PageView from '../components/PageView.vue';
 
 import Header from 'mint-ui/lib/header';
@@ -21,13 +23,16 @@ import 'mint-ui/lib/switch/style.css';
 import Lazyload from 'mint-ui/lib/lazyload';
 import 'mint-ui/lib/lazyload/style.css';
 
-export {
-	PageView,
-	Header,
-	Swipe,
-	SwipeItem,
-	Field,
-	Button,
-	Switch,
-	Lazyload
-}
+import Spinner from 'mint-ui/lib/spinner';
+import 'mint-ui/lib/spinner/style.css';
+
+
+Vue.component('page-view', PageView);
+Vue.component(Header.name, Header);
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
+Vue.component(Field.name, Field);
+Vue.component(Button.name, Button);
+Vue.component(Switch.name, Switch);
+Vue.component(Lazyload.name, Lazyload);
+Vue.component(Spinner.name, Spinner);

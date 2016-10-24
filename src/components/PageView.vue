@@ -1,7 +1,21 @@
 <script type="text/javascript">
+	import { mapGetters, mapActions } from 'vuex';
+
 	export default {
 		props: ['title', 'register', 'login'],
 		components: {
+		},
+		mounted: function(){
+			setTimeout(() => {
+				// this.$store.commit('HIDE_GLOB_LOADING');
+				this.$store.dispatch('hideGlobLoading');
+			}, 1000)
+		},		
+		computed: {
+			...mapGetters(['globLoading'])
+		},
+		methods: {
+			...mapActions(['hideGlobLoading'])
 		}
 	}
 </script>
@@ -18,7 +32,10 @@
 		  	<mt-button>立即登录</mt-button>
 	  	  </router-link>
 		</mt-header>
-		<slot></slot>
+		<mt-spinner v-if="globLoading" :size="60" :type="3" color="#26a2ff" class="page-loading"></mt-spinner>
+		<template v-if="!globLoading">
+			<slot ></slot>
+		</template>
 	</div>
 </template>
 <style lang="sass">
