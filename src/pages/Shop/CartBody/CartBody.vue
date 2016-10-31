@@ -5,12 +5,12 @@
 	export default {
 		data: function(){
 			return {
-				cartsData: []
 			}
 		},
+		props: ['cartsData'],
 		mounted: function(){
-			var tmpData = require('../FoodsList/data.js')
-			this.cartsData = [...tmpData.douzhiping, ...tmpData.kouwei];
+			// var tmpData = require('../FoodsList/data.js')
+			// this.cartsData = [...tmpData.douzhiping, ...tmpData.kouwei];
 		},
 		components: {
 			CartAddSub
@@ -28,23 +28,21 @@
 		</div>
 		<div class="cartbody-scroller">
 			<div class="piecewise-tips">
-				<b>阶梯配送费</b> 满100免配送费
+				<b>阶梯配送费</b> 满100免
+				配送费
 			</div>
 			<ul class="cartlist">
-				<template v-for="(foodMenu, foodMenuDatas) in cartsData">
-					<li class="entityrow" v-for="food in foodMenuDatas">
-						<span class="entityname">
-							<em class="name">{{food.foodName}}</em>   
-						</span> 
-						<span class="entitytotal">{{food.foodPrice * food.cartNums}}</span>
-						<cart-add-sub 
-							entitycartbutton="entitycartbutton" 
-							:food="food"
-							:food-menu="foodMenu"
-						>
-						</cart-add-sub>
-					</li>
-				</template>
+				<li class="entityrow" v-for="(food, index) in cartsData">
+					<span class="entityname">
+						<em class="name">{{food.foodName}}</em>   
+					</span> 
+					<span class="entitytotal">{{food.foodPrice * food.cartNums}}</span>
+					<cart-add-sub 
+						entitycartbutton="entitycartbutton" 
+						:food="food"
+					>
+					</cart-add-sub>
+				</li>
 			</ul>
 		</div>
 	</div>

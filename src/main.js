@@ -26,4 +26,6 @@ new Vue({
   // mixins: [mixin],
   router,
   render: h => h(App)
-})
+});
+
+var eventHub = new Vue();

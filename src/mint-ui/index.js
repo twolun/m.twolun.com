@@ -26,6 +26,9 @@ import 'mint-ui/lib/lazyload/style.css';
 import Spinner from 'mint-ui/lib/spinner';
 import 'mint-ui/lib/spinner/style.css';
 
+import Cell from 'mint-ui/lib/cell';
+import 'mint-ui/lib/cell/style.css';
+
 
 Vue.component('page-view', PageView);
 Vue.component(Header.name, Header);
@@ -36,3 +39,4 @@ Vue.component(Button.name, Button);
 Vue.component(Switch.name, Switch);
 Vue.component(Lazyload.name, Lazyload);
 Vue.component(Spinner.name, Spinner);
+Vue.component(Cell.name, Cell);

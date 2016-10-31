@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+.markdown-content {
+    font-size: 0.32rem;
+    margin: 0;
+    padding: 1.6rem;
+    color: #666;
+    background-color: #fff;
+}
+.markdown-content h1, .markdown-content h2, .markdown-content h3, .markdown-content h4, .markdown-content h5, .markdown-content h6 {
+    color: #333;
+    line-height: 2.2rem;
+    margin: 1rem 0;
+    font-weight: bold;
+}
+.markdown-content h3 {
+    font-size: 1.6rem;
+}
+.markdown-content li, .markdown-content p, .markdown-content blockquote {
+    line-height: 1.6rem;
+    font-size: 1.2rem;
+}
+.markdown-content p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+.markdown-content ul, .markdown-content ol {
+    padding-left: 2rem;
+}
+.markdown-content ul {
+    list-style: disc;
+}
+
+
+
+
+
+
+
+
+
+

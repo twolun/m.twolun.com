@@ -22,7 +22,8 @@
 	      	return {
 	      		showActivity: false,
 	      		isShowFoods: true,
-	      		currentActivity: ''
+	      		currentActivity: '',
+	      		cartShaking: false
 	        }
 	    },
 	    mounted: function(){
@@ -49,6 +50,10 @@
 	      	handleFoodsExInfo(type){
 	      		this.isShowFoods = type === 'foods' ? true : false;
 
+	      	},
+	      	handleChangeCart(){
+	      		console.log(11111111111)
+	      		this.handleChangeCart = true;
 	      	}
 	    },
 	    directives: {
@@ -74,7 +79,7 @@
 			<menu-list v-initfoodsheight></menu-list>
 			<foods-list></foods-list>
 		</div>
-		<cart-footer v-show="isShowFoods"></cart-footer>
+		<cart-footer v-show="isShowFoods" :cart-shaking="cartShaking" @change-cart="handleChangeCart"></cart-footer>
 		<shop-info v-show="!isShowFoods"></shop-info>
 		<transition name="router-fade">
 			<!-- <activity

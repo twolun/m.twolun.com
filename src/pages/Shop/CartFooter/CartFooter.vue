@@ -3,13 +3,17 @@
 	//需要一个蒙板组件
   	import XMask from 'Mask';
   	import CartBody from '../CartBody';
+  	import { mapGetters } from 'vuex';
 
 	export default {
-		props: ['cartShaking'],
+		// props: ['cartShaking'],
 		data: function(){
 			return {
-				maskShow: false
+				maskShow: false,
 			}
+		},
+		computed: {
+			...mapGetters(['cartsList', 'cartTotal', 'cartShaking'])
 		},
 		methods: {
 			handleCartShow: function(){
@@ -33,17 +37,18 @@
 		<transition name="cartbodyts">
 			<cart-body
 				v-show="maskShow"
+				:carts-data="cartsList"
 			>			
 			</cart-body>
 		</transition>
 		<div class="cartfooter">
 			<span class="carticon"
 				:class="{'shake': cartShaking}"
-				attr-quantity="23"
+				:attr-quantity="cartTotal.totalNums"
 				@click="handleCartShow"
 			></span>
 			<div class="cartprice">
-				<span class="carttotal">¥{{1000}}</span> 
+				<span class="carttotal">¥{{cartTotal.totalPrice}}</span> 
 				<span class="cartdelivery">配送费¥8</span>
 			</div>
 			<!-- <a href="javascript:" class="submitbutton">去结算</a> -->

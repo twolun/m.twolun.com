@@ -9,7 +9,6 @@
 	export default {
 		data: function(){
 			return {
-				foodsData: []
 			}
 		},
 		components: {
@@ -18,7 +17,7 @@
 		},
 		computed: {
 			...mapGetters({
-				foodslist: 'foodslist'
+				foodsData: 'foodsList'
 			})
 		},
 		methods: {
@@ -28,7 +27,7 @@
 			this.$store.dispatch('getFoodsList');
 		},
 		mounted: function(){
-			this.foodsData = require('./data.js');
+			// this.foodsData = require('./data.js');
 
 		},
 		directives: {

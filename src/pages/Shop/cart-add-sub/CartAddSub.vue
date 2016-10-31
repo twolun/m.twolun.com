@@ -1,5 +1,6 @@
 <script type="text/javascript">
 	import './cartaddsub.scss';
+	import { mapActions } from 'vuex';
 
 	export default {
 		props: ['food', 'foodMenu', 'entitycartbutton'],
@@ -13,14 +14,19 @@
 				let that = this;
 				// this.incCart(that.foodMenu, this.food.foodId);
 				//通知购物车数量改变
-				that.$emit('change-cart', 1);
+				// that.$emit('change-cart', 1);
+				that.changeCartNums();
+				that.addToCart(this.food);
 			},
 			handleSubCart: function(){
 				if(this.food.cartNums > 0){
 					// this.decCart(this.foodMenu, this.food.foodId);
-					this.$emit('change-cart', -1);
+					// this.$emit('change-cart', -1);
+					this.decFromCart(this.food);
+					this.changeCartNums();
 				}
-			}
+			},
+			...mapActions(['addToCart', 'decFromCart', 'changeCartNums'])
 		},
 	}
 </script>

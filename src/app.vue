@@ -1,6 +1,7 @@
 <script type="text/javascript">
 	import FastClick from 'fastclick';
-	import './assets/images/using/loading1.png';	
+	import './assets/images/using/loading.png';	
+	import './assets/images/using/loading-bottom.png';	
 
 	export default {
 		data () {
@@ -32,8 +33,9 @@
 		      	if(!history.getItem(to.path)){
 		      		this.$store.dispatch('showGlobLoading');
 		      		history.setItem(to.path, to.path);
+		      	}else{
+		      		this.$store.dispatch('hideGlobLoading');
 		      	}
-		      	console.log(to.path)
 		    }
 		},
 
@@ -44,7 +46,7 @@
 </script>
 <template>
 	<div class="page">
-		
+		<!-- <loading></loading> -->
 		<transition name="router-fade" mode="out-in">
 			<keep-alive>
 			<router-view></router-view>	

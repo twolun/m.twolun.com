@@ -19,22 +19,73 @@
     <meta name="x5-page-mode" content="app">
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
     <style type="text/css">
-      .init-loading {
-        width: 100px;
-        height: 100px;
-        margin: 10rem auto;
-        animation: mint-spinner-rotate 1s infinite ease-out;
-        background: url('<%= metadata.host %>/images/loading1.png') center center no-repeat;
-        background-size: 100%;
+      .load-wrap {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          will-change: transform;
+          -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+          text-align: center;
       }
-
-      @keyframes mint-spinner-rotate {
-        0% {
-          transform: translatey(0) scalex(1);
-        }        
-        
-        100% {
-          transform: translatey(-50px) scalex(.8);
+      .loading-main {
+          position: relative;
+          display: inline-block;
+          margin-top: 1em;
+          width: 60px;
+          height: 100px;
+          font-size: .666667rem;
+      }
+      .loading-bottom, .loading-icon {
+          position: absolute;
+          width: 60px;
+          height: 60px;
+          background-size: 100% auto;
+          -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+      }
+      .loading-icon {
+          z-index: 5;
+          background: url('./images/loading.png') no-repeat;
+          background-size: 100% auto;
+          -webkit-animation: loading-change 3.6s infinite steps(6),loading-jump .3s ease-in-out infinite alternate;
+          animation: loading-change 3.6s infinite steps(6),loading-jump .3s ease-in-out infinite alternate;
+      }
+      .loading-bottom {
+          bottom: -2rem;
+          background: url('./images/loading-bottom.png') no-repeat;
+          background-size: 100% auto;
+          -webkit-animation: loading-scale .3s ease-in-out infinite alternate;
+          animation: loading-scale .3s ease-in-out infinite alternate;
+      }
+      @-webkit-keyframes loading-change{
+        to{background-position:0 -360px}
+      }
+      @keyframes loading-change{
+        to{background-position:0 -360px}
+      }
+      @-webkit-keyframes loading-jump{
+        to{
+          -webkit-transform:translateY(-1.2em);
+          transform:translateY(-1.2em)
+        }
+      }
+      @keyframes loading-jump{
+        to{
+          -webkit-transform:translateY(-1.2em);
+          transform:translateY(-1.2em)
+        }
+      }
+      @-webkit-keyframes loading-scale{
+        to{
+          -webkit-transform:scale(.3);
+          transform:scale(.3)
+        }
+      }
+      @keyframes loading-scale{
+        to{
+          -webkit-transform:scale(.3);
+          transform:scale(.3)
         }
       }
     </style>
@@ -42,9 +93,12 @@
   <body>
 
   	<div id="app">
-     <div class="init-loading">
-       
-     </div> 
+      <div class="load-wrap load-transition"> 
+        <div class="loading-main"> 
+          <div class="loading-icon"></div> 
+          <div class="loading-bottom"></div> 
+        </div> 
+      </div> 
     </div>
 
   <script type="text/javascript" src="<%= metadata.host %>/build/vendor.js?v=<%= new Date().getTime()%>"></script>

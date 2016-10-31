@@ -1,0 +1,175 @@
+@charset "UTF-8";
+
+.info-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background: #26a2ff;
+    padding: 2rem 1.6rem;
+    color: #fff;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.info-box .avatar-default {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    width: 5.6rem;
+    border-radius: 50%;
+    height: 5.6rem;
+    background: #fff;
+    display: inline-block;
+    vertical-align: middle;
+}
+.info-box .avatar-default svg {
+    width: 5.6rem;
+    height: 5.6rem;
+}
+.info-box .user-info {
+    margin-left: 1.5rem;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+.info-box .user-info p {
+    margin-bottom: .5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 700;
+}
+.info-box .user-info p:first-child {
+    font-size: 2rem;
+}
+.info-box .user-info p:last-child {
+    font-size: 1.3rem;
+}
+.info-box .user-info p:last-child span:first-child {
+    vertical-align: middle;
+}
+.info-box .user-info .user-icon svg {
+    width: 1rem;
+    height: 1.4rem;
+}
+.info-box .arrow svg {
+    width: 1rem;
+    height: 2rem;
+}
+.info-data {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 8rem;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+.info-data>a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    width: 0;
+}
+.info-data a:first-child, .info-data a:nth-of-type(2) {
+    border-right: 1px solid #ddd;
+}
+
+.info-data>a p {
+    text-align: center;
+}
+.info-data>a .balance {
+    color: #f90;
+}
+.info-data>a p:first-child {
+    padding: 1.4rem 0 1rem;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+}
+.info-data>a p:first-child span {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+}
+.info-data>a p {
+    text-align: center;
+}
+.info-data>a p:last-child {
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    color: #666;
+}
+.info-data>a .score {
+    color: #6ac20b;
+}
+.info-data>a .hongbao {
+    color: #ff5f3e;
+}
+
+.profile-menu {
+    margin-top: 1rem;
+    border-top: 1px solid #ddd;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    background: #fff;
+}
+.profile-menu a {
+    display: block;
+    border-bottom: 1px solid #ddd;
+    padding: 1.5rem 1rem;
+}
+.profile-menu a span {
+    vertical-align: middle;
+}
+.profile-menu a span:first-child {
+    display: inline-block;
+}
+.profile-menu a span:first-child svg {
+    width: 1rem;
+    height: 1rem;
+}
+.profile-menu a span:last-child {
+    float: right;
+    font-size: 1.4rem;
+}
+.profile-menu a span:last-child svg {
+    fill: #ddd;
+    width: .8rem;
+    height: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
