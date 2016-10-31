@@ -8,7 +8,6 @@ import App from './app';
 import { routes, scrollBehavior } from './routes/routes.config.js';
 import './mint-ui';
 import store from './store';
-import mixin from './mixin';
 
 Vue.config.debug = PRODUCTION;//开启错误提示
 Vue.use(VueRouter);
